@@ -41,12 +41,23 @@ public class GolLogic{
         return n;
     }
     
-    private void simStepSingleCell(int c, int r){
+    private int simStepSingleCell(int c, int r){
         if(field[c][r]==1&&countNeighbors(c,r)!=3){
-            field[c][r]=0;
+            return 0;
         }else if(field[c][r]==0&&countNeighbors(c,r)==3){
-            field[c][r]=1;
+            return 1;
         }
+    }
+    
+    private void simStepField(){
+    	int[][] nField=new int[h][w];
+    	for(int i=0; i<h;i++){
+    	    for(int k=0;k<w;k++){
+    	    	nField[i][k]=simStepSingleCell(k,i);
+    	    }
+    	}
+    	field=nField;
+    	
     }
 
 }
