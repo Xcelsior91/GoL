@@ -49,7 +49,7 @@ public class GolLogic{
         }
     }
     
-    private void simStepField(){
+    public void simStepField(){
     	int[][] nField=new int[h][w];
     	for(int i=0; i<h;i++){
     	    for(int k=0;k<w;k++){
